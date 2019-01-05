@@ -1,0 +1,61 @@
+
+.header {
+  background-color: $header-bg;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .column-1 {
+    .logo {
+      height: 30px;
+      margin-left: 15px;
+    }
+  }
+  .column-2 {
+    .header-name {
+      color: $white-text;
+      font-size: 22px;
+      font-weight: 100;
+      a {
+        color: $white-text;
+        text-decoration: none;
+        font-weight: 100;
+        &:hover {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+  .column-3 {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    .nav-svg {
+      fill: white;
+      height: 16px;
+      margin-right: 20px;
+      cursor: pointer;
+      path {
+        stroke-width: 20;
+        stroke: $header-bg;
+      }
+    }
+    form {
+      margin-right: 14px;
+      input {
+        height: 20px;
+        width: 178px;
+        padding: 3px 8px;
+        border-radius: 8px;
+        border: none;
+        background-color: $white;
+        font-size: 12px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

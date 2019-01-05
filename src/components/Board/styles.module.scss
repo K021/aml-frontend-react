@@ -1,0 +1,7 @@
+.board {
+  flex: 1;
+  display: flex;
+  min-height: 700px;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
