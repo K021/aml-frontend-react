@@ -34,8 +34,8 @@ class BoardHeader extends Component {
         <div className={styles.info}>
           <div className={styles.title}>New</div>
           <div className={styles.location}>
-            <span><Link exact to="/">Home</Link></span>
-            <span> &gt; <Link exact to='/new'>New</Link></span>
+            <span><Link to="/">Home</Link></span>
+            <span> &gt; <Link to='/new'>New</Link></span>
           </div>
         </div>
         <div className={styles.tools}>

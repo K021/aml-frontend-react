@@ -1,4 +1,4 @@
-.nav {
+.nav-expand {
   list-style-type: none;
   background-color: $nav-bg;
   box-sizing: border-box;
@@ -10,14 +10,41 @@
   font-size: 14px;
   padding-top: 30px;
 
+  .shrink-button {
+    width: 30px;
+    height: 30px;
+    display: block;
+    float: right;
+    position: relative;
+    top: -38px;
+    right: 8px;
+    cursor: pointer;
+    
+    &:hover svg path {
+      stroke-width: 10;
+    }
+
+    .minus-svg {
+      fill: $white-text;
+      margin-top: 10px;
+      height: 20px;
+      width: 30px;
+
+      path {
+        stroke-width: 40;
+        stroke: $nav-bg;
+      }
+    }
+  }
+
   .wrapper {
     height: 100%;
+    margin-top: 20px;
     margin-left: 40px;
     display: flex;
     flex-direction: column;
 
-    .row {
-      color: $red-text;
+    .row {      
       li {
         margin-top: 12px;
         cursor: pointer;
@@ -40,6 +67,125 @@
         fill: $white-text;
         height: 14px;
         margin-right: 10px;
+      }
+    } 
+
+    .row-1 {
+      margin-bottom: 50px;
+    }
+    .row-2 {
+      margin-bottom: 50px;
+      .list-title {
+        color: $red-text;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 26px;
+      }
+    }
+    .row-3 {
+      .list-title {
+        color: $yellow-text;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 26px;
+      }
+    }
+  }
+}
+
+
+
+.nav-shrink {
+  list-style-type: none;
+  background-color: $nav-bg;
+  box-sizing: border-box;
+  width: 50px;
+  min-height: 700px;
+  color: $white-text;
+  font-weight: 300;
+  font-size: 14px;
+  padding-top: 30px;
+
+  .shrink-button {
+    width: 30px;
+    height: 30px;
+    display: block;
+    float: right;
+    position: relative;
+    top: -38px;
+    right: 10px;
+    cursor: pointer;
+    
+    &:hover svg path {
+      stroke-width: 10;
+    }
+
+    .minus-svg {
+      fill: $white-text;
+      margin-top: 10px;
+      height: 20px;
+      width: 30px;
+
+      path {
+        stroke-width: 40;
+        stroke: $nav-bg;
+      }
+    }
+  }
+
+  .wrapper {
+    height: 100%;
+    margin-top: 30px;
+
+    .row {
+      li {
+        margin-top: 12px;
+        position: relative;
+        cursor: pointer;
+        &:hover .tooltip {
+          visibility: visible;
+        }
+      }
+      a {
+        color: $white-text;
+        text-decoration: none;
+        font-weight: 200;
+        vertical-align: text-top;
+        align-items: center;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .svg {
+        fill: $white-text;
+        height: 14px;
+        margin-left: 18px;
+      }
+      .tooltip {
+        visibility: collapse;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 8px 18px;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 10;
+        white-space: nowrap;
+        left:100%;
+        top: -50%;
+        font-size: 13px;
+        font-weight: 300;
+
+        &::after {  // left arrow of tooltip
+          content: " ";
+          position: absolute;
+          top: 50%;
+          right: 100%; /* To the left of the tooltip */
+          margin-top: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent black transparent transparent;
+        }
       }
     } 
 

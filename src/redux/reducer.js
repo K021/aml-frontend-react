@@ -94,7 +94,7 @@ function applyToggleSearch(state, action) {
 function applyOpenProfile(state, action) {
   if (!state.isProfilePaneOn) return {
     ...state,
-    isPrefPaneOn: true,
+    isProfilePaneOn: true,
   };
 }
 function applyOpenNotif(state, action) {

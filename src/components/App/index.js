@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.module.scss';
+import { Route } from 'react-router-dom';
+
 
 import Header from 'components/Header';
 import Nav from 'components/Nav';
@@ -11,7 +13,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Route component={Header}/>
+        {/* <Header /> */}
         <div className={styles.body}>
           <Nav />
           <Board />

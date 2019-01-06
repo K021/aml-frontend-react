@@ -15,19 +15,20 @@ class Header extends Component {
     const { isSearchOn, isProfilePaneOn, isNotifPaneOn, isPrefPaneOn } = this.props;
     const { toggleSearch, openProfile, openNotif, openPref } = this.props;
 
+    console.log('header props', this.props);
     return (
       <header className={styles.header}>
         <div className={styles.column1}>
-          <Link exact to='/'>
+          <Link to='/'>
             <img className={styles.logo} src={logo} alt="logo"/>
           </Link>
         </div>
         <div className={styles.column2}>
-          <h3 className={styles.headerName}><Link exact to='/'>BlueBox</Link></h3>
+          <h3 className={styles.headerName}><Link to='/'>BlueBox</Link></h3>
         </div>
         <div className={styles.column3}>
-          <LarrowSvg className={styles.navSvg}/>
-          <RarrowSvg className={styles.navSvg}/>
+          <LarrowSvg className={styles.navSvg} onClick={this.props.history.goBack}/>
+          <RarrowSvg className={styles.navSvg} onClick={this.props.history.goForward}/>
           {isSearchOn && <SearchInput/>}
           <SearchSvg className={styles.navSvg} onClick={toggleSearch}/>
           <UserSvg className={styles.navSvg} onClick={openProfile}/>

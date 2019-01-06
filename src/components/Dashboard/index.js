@@ -60,7 +60,7 @@ class BoardHeader extends Component {
       <div className={styles.headerWrapper}>
         <div className={styles.info}>
           <div className={styles.title}>Dashboard</div>
-          <div className={styles.location}><span><Link exact to={urlHome}>
+          <div className={styles.location}><span><Link to={urlHome}>
             Home
           </Link></span></div>
         </div>

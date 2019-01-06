@@ -2,6 +2,9 @@
   width: 300px;
   min-height: 700px;
   background-color: $right-pane-bg;
+  animation-duration: .3s;
+  animation-name: slidein;
+  position: relative;
 
   .wrapper {
     width: 100%;
@@ -23,5 +26,14 @@
       font-weight: 100;
       color: $white-text;
     }
+  }
+}
+
+@keyframes slidein {
+  from {
+    left: 300px;
+  }
+  to {
+    left: 0px;
   }
 }
