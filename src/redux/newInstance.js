@@ -1,12 +1,19 @@
 
 
 // Action Types (indicators of actions)
+const OPEN_LOCATION_PANE = 'OPEN_LOCATION_PANE';
 const LOCATION_DEPTH_TOGGLE_BASE = 'LOCATION_DEPTH_TOGGLE_BASE';
 
 // Action Creators
 // return value of these functions are real 'Actions'.
 
-function toogleInstanceLocationDepth(depth) {
+function openLocationPane() {
+  return {
+    type: OPEN_LOCATION_PANE,
+  };
+}
+
+function toggleInstanceLocationDepth(depth) {
   return {
     type: LOCATION_DEPTH_TOGGLE_BASE,
     info: depth,
@@ -16,6 +23,7 @@ function toogleInstanceLocationDepth(depth) {
 // Reducer
 
 const initialState = {
+  isLocPaneOn: false,
   isInstLoc0On: true,
   isInstLoc1On: false,
   isInstLoc2On: false,
@@ -23,8 +31,10 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
+    case OPEN_LOCATION_PANE:
+      return applyOpenLocationPane(state, action);
     case LOCATION_DEPTH_TOGGLE_BASE:
-      return applyToogleInstanceLocation(state, action);
+      return applyToogleInstanceLocationDepth(state, action);
     default:
       return state;
   }
@@ -32,7 +42,14 @@ function reducer(state = initialState, action) {
 
 // Reducer Functions
 
-function applyToogleInstanceLocation(state, action) {
+function applyOpenLocationPane(state, action) {
+  return {
+    ...state,
+    isLocPaneOn: true,
+  };
+}
+
+function applyToogleInstanceLocationDepth(state, action) {
   if (state[`isInstLoc${action.info}On`]) {
     state[`isInstLoc${action.info}On`] = false;
     return state;
@@ -45,7 +62,8 @@ function applyToogleInstanceLocation(state, action) {
 // Exports
 
 const actionCreators = {
-  toogleInstanceLocationDepth: toogleInstanceLocationDepth,
+  openLocationPane: openLocationPane,
+  toggleInstanceLocationDepth: toggleInstanceLocationDepth,
 };
 export { actionCreators };
 
