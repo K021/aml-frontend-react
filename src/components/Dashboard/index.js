@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 
-import { urlHome } from 'variables/urls';
+import urls from 'variables/urls';
 import Card from 'components/Card';
 import styles from './styles.module.scss';
 
@@ -13,7 +13,7 @@ import { ReactComponent as ExpandSvg } from '../../svgs/expand.svg';
 class Dashboard extends Component {
   render() {
     return (
-      <div className={styles.board}>
+      <div className={styles.dashboard}>
         <div className={styles.header}>
           {/* <Link to={{pathname:'/new', search:'?name=daniel'}}>daniel</Link> */}
           <Switch>
@@ -56,18 +56,20 @@ class Test2 extends Component {
 
 class BoardHeader extends Component {
   render() {
+    const { headerWrapper, info, title, location, tools, svg } = styles;
+
     return (
-      <div className={styles.headerWrapper}>
-        <div className={styles.info}>
-          <div className={styles.title}>Dashboard</div>
-          <div className={styles.location}><span><Link to={urlHome}>
+      <div className={headerWrapper}>
+        <div className={info}>
+          <div className={title}>Dashboard</div>
+          <div className={location}><span><Link to={urls.urlHome}>
             Home
           </Link></span></div>
         </div>
-        <div className={styles.tools}>
-          <span><PlusSvg className={styles.svg}/>New dashboard</span>
-          <span><PencilSvg className={styles.svg}/>Edit</span>
-          <span><ExpandSvg className={styles.svg}/>Full screen</span>
+        <div className={tools}>
+          <span><PlusSvg className={svg}/>New dashboard</span>
+          <span><PencilSvg className={svg}/>Edit</span>
+          <span><ExpandSvg className={svg}/>Full screen</span>
         </div>
       </div>
     );

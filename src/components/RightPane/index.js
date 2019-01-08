@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actionCreators } from 'redux/reducer';
+import { actionCreators } from 'redux/base';
 import RightPane from './presenter';
 
 function mapStateToProps(state) {

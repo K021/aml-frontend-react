@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
-import logo from '../../images/logo.png';
+import logoImg from '../../images/logo.png';
 
 import { ReactComponent as LarrowSvg } from '../../svgs/arrow-left.svg';
 import { ReactComponent as RarrowSvg } from '../../svgs/arrow-right.svg';
@@ -12,28 +12,30 @@ import { ReactComponent as BellSvg } from '../../svgs/bell.svg';
 
 class Header extends Component {
   render() {
-    const { isSearchOn, isProfilePaneOn, isNotifPaneOn, isPrefPaneOn } = this.props;
+    const { isSearchOn } = this.props;
     const { toggleSearch, openProfile, openNotif, openPref } = this.props;
+    const { 
+      header, column1, column2, column3,
+      logo, headerName, navSvg
+    } = styles;
 
     console.log('header props', this.props);
     return (
-      <header className={styles.header}>
-        <div className={styles.column1}>
-          <Link to='/'>
-            <img className={styles.logo} src={logo} alt="logo"/>
-          </Link>
+      <header className={header}>
+        <div className={column1}>
+          <Link to='/'><img className={logo} src={logoImg} alt="logo"/></Link>
         </div>
-        <div className={styles.column2}>
-          <h3 className={styles.headerName}><Link to='/'>BlueBox</Link></h3>
+        <div className={column2}>
+          <h3 className={headerName}><Link to='/'>BlueBox</Link></h3>
         </div>
-        <div className={styles.column3}>
-          <LarrowSvg className={styles.navSvg} onClick={this.props.history.goBack}/>
-          <RarrowSvg className={styles.navSvg} onClick={this.props.history.goForward}/>
+        <div className={column3}>
+          <LarrowSvg className={navSvg} onClick={this.props.history.goBack}/>
+          <RarrowSvg className={navSvg} onClick={this.props.history.goForward}/>
           {isSearchOn && <SearchInput/>}
-          <SearchSvg className={styles.navSvg} onClick={toggleSearch}/>
-          <UserSvg className={styles.navSvg} onClick={openProfile}/>
-          <BellSvg className={styles.navSvg} onClick={openNotif}/>
-          <CogSvg className={styles.navSvg} onClick={openPref}/>
+          <SearchSvg className={navSvg} onClick={toggleSearch}/>
+          <UserSvg className={navSvg} onClick={openProfile}/>
+          <BellSvg className={navSvg} onClick={openNotif}/>
+          <CogSvg className={navSvg} onClick={openPref}/>
         </div>
       </header>
     );

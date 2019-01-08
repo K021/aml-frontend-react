@@ -1,7 +1,11 @@
 const urlHome = '/';
 const urlNew = '/new';
+const urlNewInstance = '/new/instance';
 
-export {
+const urls = {
   urlHome,
   urlNew,
+  urlNewInstance,
 };
+
+export default urls;

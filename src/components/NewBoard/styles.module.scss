@@ -1,4 +1,4 @@
-.board {
+.new-board {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -60,6 +60,8 @@
       }
     }
   }
+
+  
   .body {
     padding-left: 38px;
     box-sizing: border-box;
@@ -89,6 +91,13 @@
               font-size: 12px;
               font-weight: 300;
 
+              a {
+                color: $blue-text; 
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+              }
+
               &:hover {
                 background-color: $base-focused-bg;
               }
@@ -109,9 +118,10 @@
               th {
                 padding-left: 18px;
                 text-align: left;
-                vertical-align: middle;
                 min-width: 230px;
                 height: 48px;
+                display: flex;
+                align-items: center;
 
                 .svg {
                   fill: $blue-text;

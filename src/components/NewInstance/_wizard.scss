@@ -1,0 +1,150 @@
+.new-instance {
+  
+  .body {
+    flex: 1;
+
+    .wrapper {
+      background-color: $wizard-bg;
+      width: 350px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid $header-bg;
+
+      .wizard {
+        width: 350px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        label {
+          font-size: 12px;
+          margin-left: 1px;
+          margin-bottom: 5px;
+        }
+        form.instance {
+          display: flex;
+          flex-direction: column;
+          width: 226px;  // because of padding and border of following input
+          margin-top: 48px;
+
+          input.instance-name {
+            margin-bottom: 20px;
+            width: 200px;
+            height: 20px;
+            padding: 4px 12px;
+            line-height: 1.5;
+            font-size: 12px;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 2px;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            &::placeholder {
+              font-style: italic;
+              color: #6c757d;
+            }
+            &:focus {
+              border-color: #80bdff;
+              outline: 0;
+              box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+            &::placeholder {
+              color: #6c757d;
+              opacity: 1;
+            }
+          }
+          select.instance-type {
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 100%;
+            padding: 5px 12px 5px 12px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #495057;
+            vertical-align: middle;
+            background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+            background-size: 8px 10px;
+            border: 1px solid #ced4da;
+            border-radius: 2px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+          
+            &:focus {
+              border-color: #80bdff;
+              outline: 0;
+              box-shadow: 0 0 0 0.2rem rgba(128, 189, 255, 0.5);
+            }
+          }
+        }
+        .instance-location {
+          width: 226px;  // to match with 'form.instance'
+          
+          label {
+            font-size: 12px;
+            display: block;
+            margin-left: 1px;
+            margin-bottom: 5px;
+          }
+          .button {
+            margin-bottom: 20px;
+            background-color: #fff;
+            width: 100%;
+            height: 30px;
+            border-radius: 2px;
+            border-top: 2px solid #ced4da;
+            border-bottom: 2px solid #ced4da;
+            display: flex;
+            align-items: center;
+          }
+          span {
+            margin-left: 12px;
+            font-size: 12px;
+            flex: 1;
+          }
+          .svg {
+            height: 20px;
+            width: 30px;
+
+            path {
+              stroke-width: 60;
+              stroke: #fff;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .create {
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 30px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+          color: $white-text;
+          background-color: $pastel-dark-blue;
+          border-radius: 4px;
+          padding: 4px 12px;
+          width: 100px;
+          height: 36px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
