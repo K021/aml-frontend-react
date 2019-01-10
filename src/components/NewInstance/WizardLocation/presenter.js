@@ -10,7 +10,7 @@ import { ReactComponent as FolderRegSvg } from 'svgs/folder-regular.svg';
 
 const data = {
   'APAC': {
-    'Retail Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Retail Banking something long name': ['Production', 'dev', 'test1', 'test2', 'test3'],
     'Small Business': ['Production', 'dev', 'test1', 'test2', 'test3'],
     'Corporate Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
     'Private Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
@@ -94,7 +94,8 @@ class WizardLocation extends Component {
     }
   }
 
-  _toggleTypeById(pIndex, index) {
+  _toggleTypeById(pIndex, index, place, type) {
+    this.props.setInstanceLocationName(place, type);
     console.log('[wl id query]', `p${pIndex}t${index}`, this.state.locListId[`p${pIndex}t${index}`]);
     if (this.state.locListId[`p${pIndex}t${index}`]) {
       let s = this.state.locListId;
@@ -112,6 +113,8 @@ class WizardLocation extends Component {
   }
 
   render() {
+    const { setInstanceLocationName } = this.props;
+    const { locListId } = this.state;
     const {
       wrapper,
       depth0Wrapper, depth0,
@@ -119,8 +122,6 @@ class WizardLocation extends Component {
       depth2Wrapper, depth2,
       angle
     } = styles;
-    const { locListId } = this.state;
-    console.log('rendered state', this.state);
 
     return (
       <div className={wrapper}>
@@ -137,7 +138,7 @@ class WizardLocation extends Component {
                 return (
                   <>
                     {locListId[`p${pIndex}`] && <div className={depth1Wrapper}>
-                      <div className={depth1} onClick={() => this._toggleTypeById(pIndex, index)}>
+                      <div className={depth1} onClick={() => this._toggleTypeById(pIndex, index, place, type)}>
                         <AngleSvg isOpen={locListId[`p${pIndex}t${index}`]}/>
                         <FolderSvg/>{type}
                       </div>

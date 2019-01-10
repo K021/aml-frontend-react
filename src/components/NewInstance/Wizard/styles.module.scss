@@ -96,8 +96,16 @@
         border-bottom: 2px solid #ced4da;
         display: flex;
         align-items: center;
+        overflow: hidden;
       }
-      span {
+      .location-name {
+        white-space: nowrap;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        margin-bottom: -50px; /* maximum width of scrollbar */
+        padding-bottom: 50px;
         margin-left: 12px;
         font-size: 12px;
         flex: 1;

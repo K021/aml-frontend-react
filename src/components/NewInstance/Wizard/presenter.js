@@ -6,14 +6,13 @@ import React from 'react';
 
 class Wizard extends Component {
   render() {
-    const { openLocationPane } = this.props;
+    const { instLocName, openLocationPane } = this.props;
     const {
       wrapper, wizard,
       instance, instanceName, instanceType, instanceLocation,
-      button, svg,
+      button, svg, locationName,
       create,
     } = styles;
-    const l = ['asdf', 'skdjl'];
 
     console.log('newInstance wizard', styles);
     return (
@@ -33,7 +32,7 @@ class Wizard extends Component {
           <div className={instanceLocation}>
             <label>Instance Location</label>
             <div className={button} onClick={openLocationPane}>
-              <span>Browse instance directory</span>
+              <div className={locationName}>{instLocName}</div>
               <AngleRightSvg className={svg}/>
             </div>
           </div>
