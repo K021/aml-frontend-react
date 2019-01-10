@@ -32,14 +32,14 @@ class Wizard extends Component {
           </form>
           <div className={instanceLocation}>
             <label>Instance Location</label>
-            <div className={button}>
+            <div className={button} onClick={openLocationPane}>
               <span>Browse instance directory</span>
               <AngleRightSvg className={svg}/>
             </div>
           </div>
         </div>
         <div className={create}>
-          <button onClick={openLocationPane}>Create</button>
+          <button>Create</button>
         </div>
       </div>
     );

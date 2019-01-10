@@ -1,126 +1,57 @@
 import { Component } from 'react';
-import styles from './styles.module.scss';
 import React from 'react';
+import styles from './styles.module.scss';
 
-class WizardLocation2 extends Component {
-  render() {
-    console.log('newInstance WizardLocation styles', styles);
-    const { isLocPaneOn, isInstLoc1On, isInstLoc2On } = this.props.newInstance;
-    const { toggleInstanceLocationDepth } = this.props;
+import { ReactComponent as AngleRightSvg } from 'svgs/angle-right.svg';
+import { ReactComponent as AngleDownSvg } from 'svgs/angle-down.svg';
+import { ReactComponent as FolderSvg } from 'svgs/folder.svg';
+import { ReactComponent as FolderRegSvg } from 'svgs/folder-regular.svg';
 
-    const {
-      wrapper,
-      depth0Wrapper, depth0,
-      depth1Wrapper, depth1,
-      depth2Wrapper, depth2,
-    } = styles;
-
-    return (
-      <div className={wrapper}>
-        <div className={depth0Wrapper}>
-          <div className={depth0} onClick={() => toggleInstanceLocationDepth(1)}>APAC</div>
-          <div className={depth1Wrapper} style={isInstLoc1On ? {} : {display: 'none'}}>
-            <div className={depth1}>Retail Banking</div>
-            <div className={depth2Wrapper}>
-              <div className={depth2}>Production</div>
-            </div>
-          </div>
-          <div className={depth1Wrapper} style={isInstLoc1On ? {} : {display: 'none'}}>
-            <div className={depth1}>Small Business</div>
-            <div className={depth2Wrapper}>
-              <div className={depth2}>Production</div>
-            </div>
-          </div>
-        </div>
-        <div className={depth0Wrapper}>
-          <div className={depth0}>EMEA</div>
-          <div className={depth1Wrapper} style={isInstLoc1On ? {} : {display: 'none'}}>
-            <div className={depth1}>Retail Banking</div>
-            <div className={depth2Wrapper}>
-              <div className={depth2}>Production</div>
-            </div>
-          </div>
-          <div className={depth1Wrapper} style={isInstLoc1On ? {} : {display: 'none'}}>
-            <div className={depth1}>Small Business</div>
-            <div className={depth2Wrapper}>
-              <div className={depth2}>Production</div>
-            </div>
-          </div>
-        </div>
-        <div className={depth0Wrapper}>
-          <div className={depth0}>NY</div>
-          <div className={depth1Wrapper} style={isInstLoc1On ? {} : {display: 'none'}}>
-            <div className={depth1}>Retail Banking</div>
-            <div className={depth2Wrapper}>
-              <div className={depth2}>Production</div>
-            </div>
-          </div>
-          <div className={depth1Wrapper} style={isInstLoc1On ? {} : {display: 'none'}}>
-            <div className={depth1}>Small Business</div>
-            <div className={depth2Wrapper}>
-              <div className={depth2}>Production</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
 
 const data = {
   'APAC': {
-    'Retail Banking': ['Production', 'dev'],
-    'Small Business': ['Production', 'dev'],
-    'Corporate Banking': ['Production', 'dev'],
-    'Private Banking': ['Production', 'dev'],
+    'Retail Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Small Business': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Corporate Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Private Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
   },
   'EMEA': {
-    'Retail Banking': ['Production', 'dev'],
-    'Small Business': ['Production', 'dev'],
-    'Corporate Banking': ['Production', 'dev'],
-    'Private Banking': ['Production', 'dev'],
+    'Retail Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Small Business': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Corporate Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Private Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
   },
   'NAM': {
-    'Retail Banking': ['Production', 'dev'],
-    'Small Business': ['Production', 'dev'],
-    'Corporate Banking': ['Production', 'dev'],
-    'Private Banking': ['Production', 'dev'],
+    'Retail Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Small Business': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Corporate Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Private Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
   },
   'LATAM': {
-    'Retail Banking': ['Production', 'dev'],
-    'Small Business': ['Production', 'dev'],
-    'Corporate Banking': ['Production', 'dev'],
-    'Private Banking': ['Production', 'dev'],
+    'Retail Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Small Business': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Corporate Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Private Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
   },
   'NY': {
-    'Retail Banking': ['Production', 'dev'],
-    'Small Business': ['Production', 'dev'],
-    'Corporate Banking': ['Production', 'dev'],
-    'Private Banking': ['Production', 'dev'],
+    'Retail Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Small Business': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Corporate Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
+    'Private Banking': ['Production', 'dev', 'test1', 'test2', 'test3'],
   },
 };
 
-let dataList = Array();
-
-for (let [place, types] of Object.entries(data)) {
-  dataList.push([place, false]);
-  for (let [type, dirs] of Object.entries(types)) {
-    dataList.push([type, false]);
-    for (let dir of dirs) {
-      dataList.push([dir, false]);
-    }
-  }
-}
-
-
-
-function Directory({className, text, locListId}) {
-  if (locListId) {
-    // return (
-    //   // {locListId && <div className={className}>{text}</div>}
-    // );
-  }
-}
+// let dataList = Array();
+//
+// for (let [place, types] of Object.entries(data)) {
+//   dataList.push([place, false]);
+//   for (let [type, dirs] of Object.entries(types)) {
+//     dataList.push([type, false]);
+//     for (let dir of dirs) {
+//       dataList.push([dir, false]);
+//     }
+//   }
+// }
 
 
 class WizardLocation extends Component {
@@ -186,6 +117,7 @@ class WizardLocation extends Component {
       depth0Wrapper, depth0,
       depth1Wrapper, depth1,
       depth2Wrapper, depth2,
+      angle
     } = styles;
     const { locListId } = this.state;
     console.log('rendered state', this.state);
@@ -196,18 +128,26 @@ class WizardLocation extends Component {
           let pIndex = index;
           return (
             <div className={depth0Wrapper}>
-              <div className={depth0} onClick={() => this._togglePlaceById(index)}>{place}</div>
+              <div className={depth0} onClick={() => this._togglePlaceById(index)}>
+                <AngleSvg className={angle} isOpen={locListId[`p${pIndex}`]}/>
+                <FolderSvg/>{place}
+              </div>
+
               {Object.entries(types).map(([type, dirs], index) => {
                 return (
                   <>
                     {locListId[`p${pIndex}`] && <div className={depth1Wrapper}>
-                      <div className={depth1} onClick={() => this._toggleTypeById(pIndex, index)}>{type}</div>
+                      <div className={depth1} onClick={() => this._toggleTypeById(pIndex, index)}>
+                        <AngleSvg isOpen={locListId[`p${pIndex}t${index}`]}/>
+                        <FolderSvg/>{type}
+                      </div>
+
                       {locListId[`p${pIndex}t${index}`] && <div className={depth2Wrapper}>
-                        {Object.entries(dirs).map(([i, dir]) => {
-                          return (
-                            <div className={depth2}>{dir}</div>
-                          );
-                        })}
+                        {Object.entries(dirs).map(([i, dir]) => (
+                          <div className={depth2}>
+                            <FolderRegSvg/>{dir}
+                          </div>
+                        ))}
                       </div>}
                     </div>}
                   </>
@@ -220,5 +160,12 @@ class WizardLocation extends Component {
     );
   }
 }
+
+
+function AngleSvg({isOpen, className}) {
+  if (isOpen) return <AngleDownSvg className={className}/>;
+  else return <AngleRightSvg className={className}/>;
+}
+
 
 export default WizardLocation;

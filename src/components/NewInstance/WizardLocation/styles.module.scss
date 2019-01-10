@@ -1,4 +1,7 @@
 .wrapper {
+  padding-top: 50px;
+  padding-bottom: 70px;
+  box-sizing: border-box;
   background-color: $wizard-bg;
   width: 350px;
   height: 100%;
@@ -13,8 +16,30 @@
       width: 300px;
       box-sizing: padding-box;
       padding-left: 14px;
+      font-size: 14px;
+
       .depth-#{$i} {
+        display: flex;
+        align-items: center;
         cursor: pointer;
+        margin-bottom: 8px;
+
+        svg {
+          height: 14px;
+          width: 14px;
+          margin-right: 8px;
+
+          &.angle {
+            height: 12px;
+            width: 12px;
+            margin-right: 4px;
+
+            path {
+              stroke-width: 20;
+              stroke: $wizard-bg;
+            }
+          }
+        }
       }
     }
   }
