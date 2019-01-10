@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import urls from 'variables/urls';
 import styles from './styles.module.scss';
 
-import { ReactComponent as DatabaseSvg} from '../../svgs/database.svg';
-import { ReactComponent as ChartSvg} from '../../svgs/chart-pie.svg';
-import { ReactComponent as PencilSvg} from '../../svgs/pencil-ruler.svg';
-import { ReactComponent as FileSvg} from '../../svgs/file-alt.svg';
-import { ReactComponent as BookSvg} from '../../svgs/book.svg';
-import { ReactComponent as PlusSvg} from '../../svgs/plus-circle.svg';
+import { ReactComponent as DatabaseSvg} from 'svgs/database.svg';
+import { ReactComponent as ChartSvg} from 'svgs/chart-pie.svg';
+import { ReactComponent as PencilSvg} from 'svgs/pencil-ruler.svg';
+import { ReactComponent as FileSvg} from 'svgs/file-alt.svg';
+import { ReactComponent as BookSvg} from 'svgs/book.svg';
+import { ReactComponent as PlusSvg} from 'svgs/plus-circle.svg';
 
 
 class NewBoard extends Component {

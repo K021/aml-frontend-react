@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from 'redux/newInstance';
-import NewInstanceComponent from './presenter';
+import Wizard from './presenter';
 
 function mapStateToProps(state) {
   console.log('Header.index', state);
@@ -17,8 +17,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     toggleInstanceLocationDepth: bindActionCreators(actionCreators.toggleInstanceLocationDepth, dispatch),
-    openLocationPane: bindActionCreators(actionCreators.openLocationPane, dispatch),
   };
 }
 
-export default connect(mapStateToProps)(NewInstanceComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(Wizard);

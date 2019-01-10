@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
-import logoImg from '../../images/logo.png';
+import logoImg from 'images/logo.png';
 
-import { ReactComponent as LarrowSvg } from '../../svgs/arrow-left.svg';
-import { ReactComponent as RarrowSvg } from '../../svgs/arrow-right.svg';
-import { ReactComponent as SearchSvg } from '../../svgs/search.svg';
-import { ReactComponent as UserSvg } from '../../svgs/user.svg';
-import { ReactComponent as CogSvg } from '../../svgs/cog.svg';
-import { ReactComponent as BellSvg } from '../../svgs/bell.svg';
+import { ReactComponent as LarrowSvg } from 'svgs/arrow-left.svg';
+import { ReactComponent as RarrowSvg } from 'svgs/arrow-right.svg';
+import { ReactComponent as SearchSvg } from 'svgs/search.svg';
+import { ReactComponent as UserSvg } from 'svgs/user.svg';
+import { ReactComponent as CogSvg } from 'svgs/cog.svg';
+import { ReactComponent as BellSvg } from 'svgs/bell.svg';
 
 class Header extends Component {
   render() {

@@ -5,9 +5,9 @@ import urls from 'variables/urls';
 import Card from 'components/Card';
 import styles from './styles.module.scss';
 
-import { ReactComponent as PlusSvg } from '../../svgs/plus.svg';
-import { ReactComponent as PencilSvg } from '../../svgs/pencil-alt.svg';
-import { ReactComponent as ExpandSvg } from '../../svgs/expand.svg';
+import { ReactComponent as PlusSvg } from 'svgs/plus.svg';
+import { ReactComponent as PencilSvg } from 'svgs/pencil-alt.svg';
+import { ReactComponent as ExpandSvg } from 'svgs/expand.svg';
 
 
 class Dashboard extends Component {

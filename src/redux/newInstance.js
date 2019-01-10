@@ -49,13 +49,26 @@ function applyOpenLocationPane(state, action) {
   };
 }
 
+// function applyToogleInstanceLocationDepth(state, action) {
+//   if (state[`isInstLoc${action.info}On`]) {
+//     state[`isInstLoc${action.info}On`] = false;
+//     return state;
+//   } else {
+//     state[`isInstLoc${action.info}On`] = true;
+//     return state;
+//   }
+// }
 function applyToogleInstanceLocationDepth(state, action) {
-  if (state[`isInstLoc${action.info}On`]) {
-    state[`isInstLoc${action.info}On`] = false;
-    return state;
+  if (state.isInstLoc1On) {
+    return {
+      ...state,
+      isInstLoc1On: false,
+    };
   } else {
-    state[`isInstLoc${action.info}On`] = true;
-    return state;
+    return {
+      ...state,
+      isInstLoc1On: true,
+    };
   }
 }
 

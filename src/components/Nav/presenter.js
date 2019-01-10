@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 
-import { ReactComponent as ListSvg} from '../../svgs/list-ul.svg';
-import { ReactComponent as PlusSvg} from '../../svgs/plus-circle.svg';
-import { ReactComponent as DatabaseSvg} from '../../svgs/database.svg';
-import { ReactComponent as ChartSvg} from '../../svgs/chart-pie.svg';
-import { ReactComponent as PencilSvg} from '../../svgs/pencil-ruler.svg';
-import { ReactComponent as FileSvg} from '../../svgs/file-alt.svg';
-import { ReactComponent as BookSvg} from '../../svgs/book.svg';
-import { ReactComponent as FilterSvg} from '../../svgs/filter.svg';
-import { ReactComponent as MagicSvg} from '../../svgs/magic.svg';
-import { ReactComponent as ShareSvg} from '../../svgs/share-square.svg';
-import { ReactComponent as MinusSvg} from '../../svgs/minus.svg';
+import { ReactComponent as ListSvg} from 'svgs/list-ul.svg';
+import { ReactComponent as PlusSvg} from 'svgs/plus-circle.svg';
+import { ReactComponent as DatabaseSvg} from 'svgs/database.svg';
+import { ReactComponent as ChartSvg} from 'svgs/chart-pie.svg';
+import { ReactComponent as PencilSvg} from 'svgs/pencil-ruler.svg';
+import { ReactComponent as FileSvg} from 'svgs/file-alt.svg';
+import { ReactComponent as BookSvg} from 'svgs/book.svg';
+import { ReactComponent as FilterSvg} from 'svgs/filter.svg';
+import { ReactComponent as MagicSvg} from 'svgs/magic.svg';
+import { ReactComponent as ShareSvg} from 'svgs/share-square.svg';
+import { ReactComponent as MinusSvg} from 'svgs/minus.svg';
 
 
 class Nav extends Component {
@@ -20,8 +20,8 @@ class Nav extends Component {
     
     const { isNavShrink, toggleNav } = this.props;
 
-    if (isNavShrink) return <NavShrink toggleNav={toggleNav}></NavShrink>;
-    else return <NavExpand toggleNav={toggleNav}></NavExpand>; 
+    if (isNavShrink) return <NavShrink toggleNav={toggleNav}/>;
+    else return <NavExpand toggleNav={toggleNav}/>;
   }
 }
 
