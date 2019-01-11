@@ -113,7 +113,6 @@ class WizardLocation extends Component {
   }
 
   render() {
-    const { setInstanceLocationName } = this.props;
     const { locListId } = this.state;
     const {
       wrapper,
@@ -139,7 +138,7 @@ class WizardLocation extends Component {
                   <>
                     {locListId[`p${pIndex}`] && <div className={depth1Wrapper}>
                       <div className={depth1} onClick={() => this._toggleTypeById(pIndex, index, place, type)}>
-                        <AngleSvg isOpen={locListId[`p${pIndex}t${index}`]}/>
+                        <AngleSvg className={angle} isOpen={locListId[`p${pIndex}t${index}`]}/>
                         <FolderSvg/>{type}
                       </div>
 
