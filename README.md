@@ -6,5 +6,3 @@
 - 사용된 기술: javascript, react
 - 시연 영상: https://youtu.be/mHyLJKtt4zM
 
-## 시연 영상
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mHyLJKtt4zM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
